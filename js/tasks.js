@@ -26,6 +26,11 @@ function numberSum(N) {
   const someTotal = numberSum(7); 
   console.log(someTotal);
 
+  ////
+
+  
+
+
 //task 4
 const sum = (accumulator, currentValue) => accumulator + currentValue;
 
@@ -73,3 +78,33 @@ range(1000, 1).forEach(function(x){
 }
 
 console.log(test_prime(13));
+
+
+
+
+var start = 1;
+var end = 1000;
+var i = 1;
+var total1 = 0;
+var flag = 0;
+
+for(start = start; start <= end; start++)
+{
+ for(i = 1; i < start; i++)
+ {
+  if(start % i == 0)
+   total1 += i;
+ }
+ if((total1 == start) && (start != 0))
+ {
+  if(flag < 1)  
+  {
+   document.write("Perfect numbers are: ");
+   
+  }
+  document.write(start +", ");
+ }
+ total1 = 0;
+}
+
+
