@@ -20,3 +20,16 @@ let check = true; // check for condition, true = is perfect, false = not perfect
  if (check){
    console.log('There are no perfect numbers!');
  }
+ //
+ for (let i = 1; i <= 500; i++) {
+  let divisorSum = 0;
+  for (let j = 1; j < i; j++) {
+      if (i % j === 0) {
+          divisorSum += j;
+      }
+  }
+
+  if (divisorSum === i) {
+      console.log(i);
+  }
+}
