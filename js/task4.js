@@ -1,32 +1,22 @@
-// let perfect =
-// for (i=1; i<=500, i++){
-
-// }
-
-let start = 1;
-let end = 500;
-let i = 1;
 let total = 0;
-let flag = 0;
+let check = true; // check for condition, true = is perfect, false = not perfect
 
-for(start = start; start <= end; start++)
-{
- for(i = 1; i < start; i++)
- {
-  if(start % i == 0)
-   total += i;
- }
- if((total == start) && (start != 0))
- {
-  if(flag < 1)  
-  {
-   console.log("Perfect numbers are: ");
-   flag = 1;
-  }
-  console.log(start);
- }
- total = 0;
-}
+ for (let i = 1; i <= 500; i++){
 
-if(flag == 0)
- document.write("There in no perfect number");
+   for (let j = 1; j < i; j++) {
+     if (i%j === 0)
+       total += j;
+     }
+     if(total === i){
+       if (check) {
+         console.log('Perfect numbers are: ');
+         check = false; //change condition value, when condition is not met for case when no perfect numbers found
+       }
+       console.log(i);
+     }
+     total = 0;
+   }
+
+ if (check){
+   console.log('There are no perfect numbers!');
+ }
